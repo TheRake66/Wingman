@@ -59,7 +59,7 @@ namespace Wingman
             InitializeComponent();
 
             // Affiche la version
-            this.Text += " [3.0.0.0]";
+            this.Text += " [4.0.0.0]";
 
             // Choisi le fond ecran
             this.comboBoxWallpaper.SelectedIndex = 1;
@@ -85,8 +85,22 @@ namespace Wingman
             this.labelCraft.Text = craft.ToString();
         }
 
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Message
+            if (MessageBox.Show(
+                    "Leave game ?",
+                    "Apex Legends Wingman simulator",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
+
             // Sauvegarde le score
             string file = "Wingman history.txt";
             if (!File.Exists(file))
@@ -181,6 +195,7 @@ namespace Wingman
         {
             play(Resources.click);
             // Met en plein ecran ou pas
+            this.WindowState = FormWindowState.Normal;
             Rectangle screen = Screen.PrimaryScreen.Bounds;
             if (this.checkBoxFullscreen.Checked)
             {

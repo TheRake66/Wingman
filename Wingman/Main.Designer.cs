@@ -520,6 +520,7 @@
             this.MinimumSize = new System.Drawing.Size(1205, 700);
             this.Name = "Main";
             this.Text = "Apex Legends Wingman simulator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).EndInit();
