@@ -55,6 +55,7 @@
             this.labelCraft = new System.Windows.Forms.Label();
             this.labelSquadLeft = new System.Windows.Forms.Label();
             this.labelPlayerLeft = new System.Windows.Forms.Label();
+            this.pictureBoxVictory = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharm)).BeginInit();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKill)).BeginInit();
             this.panelDown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxFlash
@@ -380,6 +382,19 @@
             this.labelPlayerLeft.TabIndex = 21;
             this.labelPlayerLeft.Text = "60";
             // 
+            // pictureBoxVictory
+            // 
+            this.pictureBoxVictory.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxVictory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxVictory.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxVictory.Image")));
+            this.pictureBoxVictory.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxVictory.Name = "pictureBoxVictory";
+            this.pictureBoxVictory.Size = new System.Drawing.Size(1189, 661);
+            this.pictureBoxVictory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxVictory.TabIndex = 22;
+            this.pictureBoxVictory.TabStop = false;
+            this.pictureBoxVictory.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +402,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(49)))), ((int)(((byte)(56)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1189, 661);
+            this.Controls.Add(this.pictureBoxVictory);
             this.Controls.Add(this.labelPlayerLeft);
             this.Controls.Add(this.labelSquadLeft);
             this.Controls.Add(this.labelCraft);
@@ -423,6 +439,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKill)).EndInit();
             this.panelDown.ResumeLayout(false);
             this.panelDown.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVictory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,6 +472,7 @@
         private System.Windows.Forms.Label labelCraft;
         private System.Windows.Forms.Label labelSquadLeft;
         private System.Windows.Forms.Label labelPlayerLeft;
+        private System.Windows.Forms.PictureBox pictureBoxVictory;
     }
 }
 

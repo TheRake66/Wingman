@@ -224,6 +224,7 @@ namespace Wingman
                     this.currentSquad--;
                     this.labelSquadLeft.Text = this.currentSquad.ToString();
                     this.labelSquadLeft.Refresh();
+                    play(Resources.squad);
                 }
                 // Last player
                 this.labelPlayerLeft.Text = this.currentPlayer > 10 ? this.currentPlayer.ToString() : "?";
@@ -250,7 +251,11 @@ namespace Wingman
 
         private void victory()
         {
-
+            // Victory !!!
+            this.pictureBoxVictory.Visible = true;
+            this.pictureBoxVictory.Refresh();
+            playSync(Resources.victory);
+            Application.Exit();
         }
         // --------------------------------------------------------
 

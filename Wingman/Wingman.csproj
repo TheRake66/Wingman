@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Badge_You%2527re_Tiering_Me_Apart_Apex_Predator_RS2.ico</ApplicationIcon>
+    <ApplicationIcon>predator.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -115,8 +115,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Badge_You%2527re_Tiering_Me_Apart_Apex_Predator_RS2.ico" />
-    <None Include="Resources\here.wav" />
+    <Content Include="predator.ico" />
+    <None Include="Resources\squad.wav" />
     <None Include="Resources\down.wav" />
+    <None Include="Resources\victory.wav" />
+    <None Include="Resources\here.wav" />
     <None Include="Resources\hover.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
