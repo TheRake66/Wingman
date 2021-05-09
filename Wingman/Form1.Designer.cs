@@ -29,56 +29,61 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFlash = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGun = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCharm = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.checkBoxMusic = new System.Windows.Forms.CheckBox();
+            this.checkBoxCharm = new System.Windows.Forms.CheckBox();
+            this.checkBoxReload = new System.Windows.Forms.CheckBox();
+            this.checkBoxWallpaper = new System.Windows.Forms.CheckBox();
+            this.labelAmmo = new System.Windows.Forms.Label();
+            this.pictureBoxShot = new System.Windows.Forms.PictureBox();
+            this.pictureBoxReload = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReload)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxFlash
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(370, 275);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxFlash.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxFlash.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxFlash.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFlash.Image")));
+            this.pictureBoxFlash.Location = new System.Drawing.Point(20, 20);
+            this.pictureBoxFlash.Name = "pictureBoxFlash";
+            this.pictureBoxFlash.Size = new System.Drawing.Size(370, 275);
+            this.pictureBoxFlash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFlash.TabIndex = 0;
+            this.pictureBoxFlash.TabStop = false;
+            this.pictureBoxFlash.Visible = false;
             // 
-            // pictureBox2
+            // pictureBoxGun
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(370, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(800, 500);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxGun.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxGun.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxGun.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGun.Image")));
+            this.pictureBoxGun.Location = new System.Drawing.Point(370, 20);
+            this.pictureBoxGun.Name = "pictureBoxGun";
+            this.pictureBoxGun.Size = new System.Drawing.Size(800, 500);
+            this.pictureBoxGun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxGun.TabIndex = 1;
+            this.pictureBoxGun.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBoxCharm
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(940, 45);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 143);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxCharm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxCharm.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCharm.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCharm.Image")));
+            this.pictureBoxCharm.Location = new System.Drawing.Point(940, 45);
+            this.pictureBoxCharm.Name = "pictureBoxCharm";
+            this.pictureBoxCharm.Size = new System.Drawing.Size(109, 143);
+            this.pictureBoxCharm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCharm.TabIndex = 2;
+            this.pictureBoxCharm.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -92,99 +97,125 @@
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // checkBox1
+            // checkBoxMusic
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(45, 300);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(221, 27);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Background music";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBoxMusic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxMusic.AutoSize = true;
+            this.checkBoxMusic.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxMusic.Checked = true;
+            this.checkBoxMusic.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxMusic.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMusic.Location = new System.Drawing.Point(45, 300);
+            this.checkBoxMusic.Name = "checkBoxMusic";
+            this.checkBoxMusic.Size = new System.Drawing.Size(221, 27);
+            this.checkBoxMusic.TabIndex = 4;
+            this.checkBoxMusic.Text = "Background music";
+            this.checkBoxMusic.UseVisualStyleBackColor = false;
             // 
-            // checkBox2
+            // checkBoxCharm
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(45, 330);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(185, 27);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Diamond charm";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.checkBoxCharm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxCharm.AutoSize = true;
+            this.checkBoxCharm.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxCharm.Checked = true;
+            this.checkBoxCharm.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxCharm.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCharm.Location = new System.Drawing.Point(45, 330);
+            this.checkBoxCharm.Name = "checkBoxCharm";
+            this.checkBoxCharm.Size = new System.Drawing.Size(185, 27);
+            this.checkBoxCharm.TabIndex = 5;
+            this.checkBoxCharm.Text = "Diamond charm";
+            this.checkBoxCharm.UseVisualStyleBackColor = false;
+            this.checkBoxCharm.CheckedChanged += new System.EventHandler(this.checkBoxCharm_CheckedChanged);
             // 
-            // checkBox3
+            // checkBoxReload
             // 
-            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(45, 360);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(161, 27);
-            this.checkBox3.TabIndex = 6;
-            this.checkBox3.Text = "Auto reload";
-            this.checkBox3.UseVisualStyleBackColor = false;
+            this.checkBoxReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxReload.AutoSize = true;
+            this.checkBoxReload.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxReload.Checked = true;
+            this.checkBoxReload.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxReload.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxReload.Location = new System.Drawing.Point(45, 360);
+            this.checkBoxReload.Name = "checkBoxReload";
+            this.checkBoxReload.Size = new System.Drawing.Size(161, 27);
+            this.checkBoxReload.TabIndex = 6;
+            this.checkBoxReload.Text = "Auto reload";
+            this.checkBoxReload.UseVisualStyleBackColor = false;
             // 
-            // checkBox4
+            // checkBoxWallpaper
             // 
-            this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(45, 390);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(137, 27);
-            this.checkBox4.TabIndex = 7;
-            this.checkBox4.Text = "Wallpaper";
-            this.checkBox4.UseVisualStyleBackColor = false;
+            this.checkBoxWallpaper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxWallpaper.AutoSize = true;
+            this.checkBoxWallpaper.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxWallpaper.Checked = true;
+            this.checkBoxWallpaper.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxWallpaper.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxWallpaper.Location = new System.Drawing.Point(45, 390);
+            this.checkBoxWallpaper.Name = "checkBoxWallpaper";
+            this.checkBoxWallpaper.Size = new System.Drawing.Size(137, 27);
+            this.checkBoxWallpaper.TabIndex = 7;
+            this.checkBoxWallpaper.Text = "Wallpaper";
+            this.checkBoxWallpaper.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // labelAmmo
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Unispace", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(185, 450);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 58);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "6";
+            this.labelAmmo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelAmmo.AutoSize = true;
+            this.labelAmmo.BackColor = System.Drawing.Color.Transparent;
+            this.labelAmmo.Font = new System.Drawing.Font("Unispace", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAmmo.Location = new System.Drawing.Point(185, 450);
+            this.labelAmmo.Name = "labelAmmo";
+            this.labelAmmo.Size = new System.Drawing.Size(54, 58);
+            this.labelAmmo.TabIndex = 8;
+            this.labelAmmo.Text = "6";
+            // 
+            // pictureBoxShot
+            // 
+            this.pictureBoxShot.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxShot.Location = new System.Drawing.Point(850, 250);
+            this.pictureBoxShot.Name = "pictureBoxShot";
+            this.pictureBoxShot.Size = new System.Drawing.Size(120, 85);
+            this.pictureBoxShot.TabIndex = 9;
+            this.pictureBoxShot.TabStop = false;
+            this.pictureBoxShot.Click += new System.EventHandler(this.pictureBoxShot_Click);
+            // 
+            // pictureBoxReload
+            // 
+            this.pictureBoxReload.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxReload.Location = new System.Drawing.Point(935, 185);
+            this.pictureBoxReload.Name = "pictureBoxReload";
+            this.pictureBoxReload.Size = new System.Drawing.Size(65, 30);
+            this.pictureBoxReload.TabIndex = 10;
+            this.pictureBoxReload.TabStop = false;
+            this.pictureBoxReload.Click += new System.EventHandler(this.pictureBoxReload_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 541);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.pictureBoxReload);
+            this.Controls.Add(this.pictureBoxShot);
+            this.Controls.Add(this.labelAmmo);
+            this.Controls.Add(this.checkBoxWallpaper);
+            this.Controls.Add(this.checkBoxReload);
+            this.Controls.Add(this.checkBoxCharm);
+            this.Controls.Add(this.checkBoxMusic);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.MaximumSize = new System.Drawing.Size(1205, 580);
+            this.Controls.Add(this.pictureBoxCharm);
+            this.Controls.Add(this.pictureBoxGun);
+            this.Controls.Add(this.pictureBoxFlash);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1205, 580);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Text = "Apex Legends Wingman simulator";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,15 +223,17 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBoxFlash;
+        private System.Windows.Forms.PictureBox pictureBoxGun;
+        private System.Windows.Forms.PictureBox pictureBoxCharm;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxMusic;
+        private System.Windows.Forms.CheckBox checkBoxCharm;
+        private System.Windows.Forms.CheckBox checkBoxReload;
+        private System.Windows.Forms.CheckBox checkBoxWallpaper;
+        private System.Windows.Forms.Label labelAmmo;
+        private System.Windows.Forms.PictureBox pictureBoxShot;
+        private System.Windows.Forms.PictureBox pictureBoxReload;
     }
 }
 
