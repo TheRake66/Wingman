@@ -62,6 +62,7 @@
             this.panelVictoryTop = new System.Windows.Forms.Panel();
             this.panelVictoryBot = new System.Windows.Forms.Panel();
             this.comboBoxWallpaper = new System.Windows.Forms.ComboBox();
+            this.checkBoxFullscreen = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharm)).BeginInit();
@@ -456,13 +457,28 @@
             "Kings canyon",
             "Olympus",
             "World\'s Edge"});
-            this.comboBoxWallpaper.Location = new System.Drawing.Point(30, 118);
+            this.comboBoxWallpaper.Location = new System.Drawing.Point(216, 58);
             this.comboBoxWallpaper.Name = "comboBoxWallpaper";
             this.comboBoxWallpaper.Size = new System.Drawing.Size(175, 31);
             this.comboBoxWallpaper.TabIndex = 24;
             this.comboBoxWallpaper.SelectedIndexChanged += new System.EventHandler(this.comboBoxWallpaper_SelectedIndexChanged);
             this.comboBoxWallpaper.Click += new System.EventHandler(this.controlClick_CheckedChanged);
             this.comboBoxWallpaper.MouseHover += new System.EventHandler(this.control_MouseHover);
+            // 
+            // checkBoxFullscreen
+            // 
+            this.checkBoxFullscreen.AutoSize = true;
+            this.checkBoxFullscreen.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxFullscreen.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFullscreen.ForeColor = System.Drawing.Color.White;
+            this.checkBoxFullscreen.Location = new System.Drawing.Point(216, 25);
+            this.checkBoxFullscreen.Name = "checkBoxFullscreen";
+            this.checkBoxFullscreen.Size = new System.Drawing.Size(161, 27);
+            this.checkBoxFullscreen.TabIndex = 28;
+            this.checkBoxFullscreen.Text = "Full screen";
+            this.checkBoxFullscreen.UseVisualStyleBackColor = false;
+            this.checkBoxFullscreen.CheckedChanged += new System.EventHandler(this.checkBoxFullscreen_CheckedChanged);
+            this.checkBoxFullscreen.MouseHover += new System.EventHandler(this.control_MouseHover);
             // 
             // Main
             // 
@@ -475,6 +491,7 @@
             this.Controls.Add(this.pictureBoxVictory);
             this.Controls.Add(this.panelVictoryBot);
             this.Controls.Add(this.panelVictoryTop);
+            this.Controls.Add(this.checkBoxFullscreen);
             this.Controls.Add(this.pictureBoxAmmo);
             this.Controls.Add(this.labelAmmo);
             this.Controls.Add(this.comboBoxWallpaper);
@@ -555,6 +572,7 @@
         private System.Windows.Forms.Panel panelVictoryTop;
         private System.Windows.Forms.Panel panelVictoryBot;
         private System.Windows.Forms.ComboBox comboBoxWallpaper;
+        private System.Windows.Forms.CheckBox checkBoxFullscreen;
     }
 }
 

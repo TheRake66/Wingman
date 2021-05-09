@@ -59,7 +59,7 @@ namespace Wingman
             InitializeComponent();
 
             // Affiche la version
-            this.Text += " [2.0.0.0]";
+            this.Text += " [3.0.0.0]";
 
             // Choisi le fond ecran
             this.comboBoxWallpaper.SelectedIndex = 1;
@@ -175,6 +175,26 @@ namespace Wingman
             play(Resources.click);
             // Change chargeur
             this.maxAmmo = this.checkBoxBigmag.Checked ? 9 : 6;
+        }
+
+        private void checkBoxFullscreen_CheckedChanged(object sender, EventArgs e)
+        {
+            play(Resources.click);
+            // Met en plein ecran ou pas
+            Rectangle screen = Screen.PrimaryScreen.Bounds;
+            if (this.checkBoxFullscreen.Checked)
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.Size = new Size(screen.Width, screen.Height);
+                this.Location = new Point(0, 0);
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.Size = this.MinimumSize;
+                this.Location = new Point(screen.Width / 2 - this.Width / 2, 
+                    screen.Height / 2 - this.Height / 2);
+            }
         }
 
         private void comboBoxWallpaper_SelectedIndexChanged(object sender, EventArgs e)
