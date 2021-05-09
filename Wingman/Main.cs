@@ -19,6 +19,10 @@ namespace Wingman
         // --------------------------------------------------------
         private int currentAmmo = 6;
         private int currentKill = 0;
+        private int currentDamage = 0;
+        private int currentPlayer = 60;
+        private int currentSquad = 10;
+
         private bool emprtyToRed = false;
         private Random rnd = new Random();
         private string[] players =
@@ -51,18 +55,32 @@ namespace Wingman
             InitializeComponent();
 
             // Met en transparent
-            this.labelKill.Parent = this.pictureBoxKill;
-            this.labelKill.Location = new Point(70, 12);
+
             this.pictureBoxCharm.Parent = this.pictureBoxGun;
             this.pictureBoxCharm.Location = new Point(575, 25);
+
             this.pictureBoxReload.Parent = this.pictureBoxGun;
             this.pictureBoxReload.Location = new Point(565, 165);
+
             this.pictureBoxShot.Parent = this.pictureBoxGun;
             this.pictureBoxShot.Location = new Point(480, 230);
+
+            this.labelCraft.Parent = this.pictureBoxKill;
+            this.labelCraft.Location = new Point(68, 13);
+
+            this.labelSquadLeft.Parent = this.pictureBoxKill;
+            this.labelSquadLeft.Location = new Point(147, 13);
+
+            this.labelPlayerLeft.Parent = this.pictureBoxKill;
+            this.labelPlayerLeft.Location = new Point(403, 13);
 
             // Change le curseur
             byte[] buffer = Resources.cursor;
             using (MemoryStream m = new MemoryStream(buffer)) this.Cursor = new Cursor(m);
+
+
+            // Random craft
+            this.labelCraft.Text = this.rnd.Next(99).ToString();
         }
         // --------------------------------------------------------
 
@@ -178,8 +196,8 @@ namespace Wingman
                 }
 
                 // Change les damages
-                this.labelDamage.Text = proba == rnd.Next(5) ? "90" : "45";
-                this.labelDamage.Refresh();
+                this.labelDamageInflic.Text = proba == rnd.Next(5) ? "90" : "45";
+                this.labelDamageInflic.Refresh();
 
                 // Change la legende
                 this.labelPlayer.Text = this.players[rnd.Next(this.players.Length)].ToUpper();
