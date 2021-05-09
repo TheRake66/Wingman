@@ -55,7 +55,6 @@ namespace Wingman
             InitializeComponent();
 
             // Met en transparent
-
             this.pictureBoxCharm.Parent = this.pictureBoxGun;
             this.pictureBoxCharm.Location = new Point(575, 25);
 
@@ -73,6 +72,12 @@ namespace Wingman
 
             this.labelPlayerLeft.Parent = this.pictureBoxKill;
             this.labelPlayerLeft.Location = new Point(403, 13);
+
+            this.labelKill.Parent = this.pictureBoxKill;
+            this.labelKill.Location = new Point(210, 71);
+
+            this.labelDamage.Parent = this.pictureBoxKill;
+            this.labelDamage.Location = new Point(363, 71);
 
             // Change le curseur
             byte[] buffer = Resources.cursor;
@@ -196,8 +201,33 @@ namespace Wingman
                 }
 
                 // Change les damages
-                this.labelDamageInflic.Text = proba == rnd.Next(5) ? "90" : "45";
+                int damage = proba == rnd.Next(5) ? 90 : 45;
+                // Max 9999 damage
+                if (this.currentKill < 9999)
+                {
+                    // Ajoute les damages
+                    this.currentDamage += damage;
+                    this.labelDamage.Text = this.currentDamage.ToString();
+                    this.labelDamage.Refresh();
+                }
+                this.labelDamageInflic.Text = damage.ToString();
                 this.labelDamageInflic.Refresh();
+
+
+                // Victoire ou pas
+                this.currentPlayer--;
+                if (this.currentPlayer == 3) victory();
+
+                if (this.currentPlayer % 3 == 0)
+                {
+                    // Last squad
+                    this.currentSquad--;
+                    this.labelSquadLeft.Text = this.currentSquad.ToString();
+                    this.labelSquadLeft.Refresh();
+                }
+                // Last player
+                this.labelPlayerLeft.Text = this.currentPlayer > 10 ? this.currentPlayer.ToString() : "?";
+                this.labelPlayerLeft.Refresh();
 
                 // Change la legende
                 this.labelPlayer.Text = this.players[rnd.Next(this.players.Length)].ToUpper();
@@ -216,6 +246,11 @@ namespace Wingman
                 this.panelDown.Hide();
                 this.panelDown.Refresh();
             }
+        }
+
+        private void victory()
+        {
+
         }
         // --------------------------------------------------------
 
