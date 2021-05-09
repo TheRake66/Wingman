@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("Wingman")]
+[assembly: AssemblyTitle("Apex Legends Wingman simulator")]
 [assembly: AssemblyDescription("Apex Legends Wingman simulator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
