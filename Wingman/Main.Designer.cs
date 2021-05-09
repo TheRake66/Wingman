@@ -392,7 +392,7 @@
             this.pictureBoxVictory.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxVictory.Image")));
             this.pictureBoxVictory.Location = new System.Drawing.Point(0, 65);
             this.pictureBoxVictory.Name = "pictureBoxVictory";
-            this.pictureBoxVictory.Size = new System.Drawing.Size(1189, 596);
+            this.pictureBoxVictory.Size = new System.Drawing.Size(1189, 531);
             this.pictureBoxVictory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxVictory.TabIndex = 22;
             this.pictureBoxVictory.TabStop = false;
@@ -472,8 +472,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1189, 661);
-            this.Controls.Add(this.panelVictoryBot);
             this.Controls.Add(this.pictureBoxVictory);
+            this.Controls.Add(this.panelVictoryBot);
             this.Controls.Add(this.panelVictoryTop);
             this.Controls.Add(this.pictureBoxAmmo);
             this.Controls.Add(this.labelAmmo);
