@@ -17,11 +17,15 @@ namespace Wingman
     public partial class Main : Form
     {
         // --------------------------------------------------------
+        private int maxAmmo = 6;
+        private bool isVictory = false;
+
         private int currentAmmo = 6;
         private int currentKill = 0;
         private int currentDamage = 0;
         private int currentPlayer = 60;
         private int currentSquad = 20;
+        private int currentShot = 0;
 
         private bool emprtyToRed = false;
         private Random rnd = new Random();
@@ -54,38 +58,96 @@ namespace Wingman
         {
             InitializeComponent();
 
+            // Affiche la version
+            this.Text += " [2.0.0.0]";
+
+            // Choisi le fond ecran
+            this.comboBoxWallpaper.SelectedIndex = 1;
+
             // Met en transparent
-            this.pictureBoxCharm.Parent = this.pictureBoxGun;
-            this.pictureBoxCharm.Location = new Point(575, 25);
-
-            this.pictureBoxReload.Parent = this.pictureBoxGun;
-            this.pictureBoxReload.Location = new Point(565, 165);
-
-            this.pictureBoxShot.Parent = this.pictureBoxGun;
-            this.pictureBoxShot.Location = new Point(480, 230);
-
-            this.labelCraft.Parent = this.pictureBoxKill;
-            this.labelCraft.Location = new Point(68, 13);
-
-            this.labelSquadLeft.Parent = this.pictureBoxKill;
-            this.labelSquadLeft.Location = new Point(147, 13);
-
-            this.labelPlayerLeft.Parent = this.pictureBoxKill;
-            this.labelPlayerLeft.Location = new Point(403, 13);
-
-            this.labelKill.Parent = this.pictureBoxKill;
-            this.labelKill.Location = new Point(210, 71);
-
-            this.labelDamage.Parent = this.pictureBoxKill;
-            this.labelDamage.Location = new Point(363, 71);
+            parent(this.pictureBoxCharm, this.pictureBoxGun, 575, 25);
+            parent(this.pictureBoxReload, this.pictureBoxGun, 565, 165);
+            parent(this.pictureBoxShot, this.pictureBoxGun, 480, 230);
+            parent(this.labelCraft, this.pictureBoxKill, 68, 13);
+            parent(this.labelSquadLeft, this.pictureBoxKill, 147, 13);
+            parent(this.labelPlayerLeft, this.pictureBoxKill, 403, 13);
+            parent(this.labelKill, this.pictureBoxKill, 210, 71);
+            parent(this.labelDamage, this.pictureBoxKill, 363, 71);
 
             // Change le curseur
             byte[] buffer = Resources.cursor;
             using (MemoryStream m = new MemoryStream(buffer)) this.Cursor = new Cursor(m);
 
-
             // Random craft
-            this.labelCraft.Text = this.rnd.Next(1, 99).ToString();
+            int craft = 0;
+            do craft = this.rnd.Next(5, 95);
+            while (craft % 5 != 0);
+            this.labelCraft.Text = craft.ToString();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Sauvegarde le score
+            string file = "Wingman history.txt";
+            if (!File.Exists(file))
+            {
+                try
+                {
+                    File.WriteAllText(file, @"
+###################################################################################################################
+#                                     ____                                                                        #
+#                                     \   \                                                                       #
+#                               ____   \   \    ____                                                              #
+#                               \   \   \   \   \   \                                                             #
+#                                \   \   \   \   \   \                                                            #
+#                        _________\___\___\___\___\___\______________________                                     #
+#                       \        __   __ ___   _   _     _    ___  ___      \                                     #
+#                        \       \ \ / // _ \ | | | |   /_\  | _ \| __|      \                                    #
+#                         \       \ V /| (_) || |_| |  / _ \ |   /| _|        \                                   #
+#                          \       |_|  \___/  \___/  /_/ \_\|_|_\|___|        \                                  #
+#                   ________\___________________________________________________\________                         #
+#           ________\        _____  _    _            __  __  _____  _____  ____   _   _ \_________               #
+#           \        \      / ____|| |  | |    /\    |  \/  ||  __ \|_   _|/ __ \ | \ | | \        \              #
+#            \        \    | |     | |__| |   /  \   | \  / || |__) | | | | |  | ||  \| |  \        \             #
+#             \        \   | |     |  __  |  / /\ \  | |\/| ||  ___/  | | | |  | || . ` |   \        \            #
+#              \        \  | |____ | |  | | / ____ \ | |  | || |     _| |_| |__| || |\  |    \        \           #
+#               \________\  \_____||_|  |_|/_/    \_\|_|  |_||_|    |_____|\____/ |_| \_|     \________\          #
+#                         \____________________________________________________________________\                  #
+#                                               \   \   \   \   \   \                                             #
+#                                                \   \   \   \   \   \                                            #
+#                                                 \___\   \   \   \___\                                           #
+#                                                          \___\                                                  #
+#                                                                                                                 #
+###################################################################################################################
+#                                                                                                                 #
+#                                      ~* Apex Legends Wingman simulator *~                                       #
+#                                ~* Made by Thibault BUSTOS (alias TheRake6666) *~                                #
+#                                                                                                                 #
+###################################################################################################################
+#            #            #            #             #              #                #                #           #
+#   Result   #    Date    #    Hour    # Squads left # Players left # Number of kill # Number of shot #  Damages  #
+#            #            #            #             #              #                #                #           #
+###################################################################################################################");
+                } catch { }
+            }
+
+            string victory = completestr(this.isVictory ? "Victory" : "Defeat", 10);
+            string date = completestr(DateTime.Now.ToString("M/d/yyyy"), 10);
+            string hour = completestr(DateTime.Now.ToString("HH:mm:ss"), 10);
+            string squad = completestr(this.currentSquad.ToString(), 11);
+            string player = completestr(this.currentPlayer.ToString(), 12);
+            string kill = completestr(this.currentKill.ToString(), 14);
+            string shot = completestr(this.currentShot.ToString(), 14);
+            string damage = completestr(this.currentDamage.ToString(), 9);
+
+            try
+            {
+                File.AppendAllText(file, @"
+#            #            #            #             #              #                #                #           #
+# " + victory + @" # " + date + @" # " + hour + @" # " + squad + @" # " + player + @" # " + kill + @" # " + shot + @" # " + damage + @" #
+#            #            #            #             #              #                #                #           #
+###################################################################################################################");
+            } catch { }
         }
         // --------------------------------------------------------
 
@@ -96,18 +158,61 @@ namespace Wingman
         private void checkBoxCharm_CheckedChanged(object sender, EventArgs e)
         {
             // Affiche le charm
-            this.pictureBoxCharm.Visible = this.checkBoxCharm.Checked;
-            // Son click ou select
-            if (this.pictureBoxCharm.Visible) play(Resources.select);
-            else play(Resources.click);
+            if (this.checkBoxCharm.Checked)
+            {
+                this.pictureBoxCharm.Show();
+                play(Resources.select);
+            }
+            else
+            {
+                this.pictureBoxCharm.Hide();
+                play(Resources.click);
+            }
         }
 
-        private void checkBoxReload_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxBigmag_CheckedChanged(object sender, EventArgs e)
         {
+            play(Resources.click);
+            // Change chargeur
+            this.maxAmmo = this.checkBoxBigmag.Checked ? 9 : 6;
+        }
+
+        private void comboBoxWallpaper_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            play(Resources.select);
+            /*
+            Only color
+            Kings canyon
+            Olympus
+            World's Edge
+            */
+            switch (this.comboBoxWallpaper.SelectedIndex)
+            {
+                case 0:
+                    this.BackgroundImage = null;
+                    break;
+
+                case 1:
+                    this.BackgroundImage = Resources.kingskanyon;
+                    break;
+
+                case 2:
+                    this.BackgroundImage = Resources.olympus;
+                    break;
+
+                case 3:
+                    this.BackgroundImage = Resources.wordlsedge;
+                    break;
+            }
+        }
+
+        private void controlClick_CheckedChanged(object sender, EventArgs e)
+        {
+            // Son du click
             play(Resources.click);
         }
 
-        private void checkBox_MouseHover(object sender, EventArgs e)
+        private void control_MouseHover(object sender, EventArgs e)
         {
             // Son hover
             play(Resources.hover);
@@ -128,7 +233,7 @@ namespace Wingman
         private void pictureBoxReload_Click(object sender, EventArgs e)
         {
             // Appui recharge
-            if (this.currentAmmo < 6) reload();
+            if (this.currentAmmo < this.maxAmmo) reload();
         }
 
         private void pictureBoxAmmo_MouseClick(object sender, MouseEventArgs e)
@@ -147,11 +252,11 @@ namespace Wingman
             playSync(Resources.reload);
 
             // Remet au max
-            this.currentAmmo = 6;
+            this.currentAmmo = this.maxAmmo;
             this.labelAmmo.Text = this.currentAmmo.ToString();
 
             // Remet le compteur blanc
-            this.timerEmpty.Enabled = false;
+            this.timerEmpty.Stop();
             this.labelAmmo.ForeColor = Color.White;
         }
 
@@ -160,103 +265,97 @@ namespace Wingman
             // Joue le tire
             play(this.currentAmmo > 1 ? Resources.shot : Resources.last);
 
+            // Compte les tirs
+            this.currentShot++;
+
             // Retire une balle
             this.currentAmmo--;
             this.labelAmmo.Text = this.currentAmmo.ToString();
-            this.labelAmmo.Refresh();
 
             // Si plus de balle
-            if (this.currentAmmo == 0) this.timerEmpty.Enabled = true;
+            if (this.currentAmmo == 0) this.timerEmpty.Start();
 
             // Affiche le flash
             this.pictureBoxFlash.Show();
-            this.pictureBoxFlash.Refresh();
-            Thread.Sleep(50);
-            this.pictureBoxFlash.Hide();
-            this.pictureBoxFlash.Refresh();
+            this.timerFlash.Start();
 
             // Touche
             hit();
-
-            // Temps entre chaque balle
-            Thread.Sleep(300);
         }
 
         private void hit()
         {
             // Proba de kill
-            int proba = rnd.Next(5);
-            if (proba == rnd.Next(5))
+            if (proba())
             {
                 // Joue le bruit down
                 play(Resources.down);
 
-                // Max 999 kills
-                if (this.currentKill < 999)
-                {
-                    // Ajoute un kill
-                    this.currentKill++;
-                    this.labelKill.Text = this.currentKill.ToString();
-                    this.labelKill.Refresh();
-                }
+                // Defini les degats
+                int damage = proba() ? 90 : 45;
 
-                // Change les damages
-                int damage = proba == rnd.Next(5) ? 90 : 45;
-                // Max 9999 damage
-                if (this.currentKill < 9999)
-                {
-                    // Ajoute les damages
-                    this.currentDamage += damage;
-                    this.labelDamage.Text = this.currentDamage.ToString();
-                    this.labelDamage.Refresh();
-                }
-                this.labelDamageInflic.Text = damage.ToString();
-                this.labelDamageInflic.Refresh();
+                // Down ennemi
+                down(damage);
 
-
-                // Victoire ou pas
-                this.currentPlayer--;
-
-                if (this.currentPlayer % 3 == 0)
-                {
-                    // Last squad
-                    this.currentSquad--;
-                    this.labelSquadLeft.Text = this.currentSquad.ToString();
-                    this.labelSquadLeft.Refresh();
-                    play(Resources.squad);
-                }
-                // Last player
-                this.labelPlayerLeft.Text = this.currentPlayer > 10 ? this.currentPlayer.ToString() : "?";
-                this.labelPlayerLeft.Refresh();
-
-                // Change la legende
-                this.labelPlayer.Text = this.players[rnd.Next(this.players.Length)].ToUpper();
-                this.labelPlayer.Refresh();
-
-                // Replace le pannel down
-                this.panelDown.Location = new Point(
-                    this.Size.Width / 2 - this.panelDown.Size.Width / 2,
-                    this.Height / 3 * 2
-                    );
-
-                // Affiche le pannel down
-                this.panelDown.Show();
-                this.panelDown.Refresh();
-                Thread.Sleep(1000);
-                this.panelDown.Hide();
-                this.panelDown.Refresh();
-
-                if (this.currentSquad == 1) victory();
+                // Met a jour les compteurs
+                counter(damage);
             }
+        }
+
+        private void counter(int damage)
+        {
+            // Retire un joueur
+            this.currentPlayer--;
+            this.labelPlayerLeft.Text = this.currentPlayer > 10 ? this.currentPlayer.ToString() : "?";
+
+            // Retire une squad
+            if (this.currentPlayer % 3 == 0)
+            {
+                // Last squad
+                this.currentSquad--;
+                this.labelSquadLeft.Text = this.currentSquad.ToString();
+                play(Resources.squad);
+            }
+
+            // Ajoute un kill
+            this.currentKill++;
+            this.labelKill.Text = this.currentKill.ToString();
+
+            // Ajoute les damages
+            this.currentDamage += damage;
+            this.labelDamage.Text = this.currentDamage.ToString();
+
+            // Victoire ou pas
+            if (this.currentSquad == 1) victory();
+        }
+
+        private void down(int damage)
+        {
+            // Change les damages inglige
+            this.labelDamageInflic.Text = damage.ToString();
+
+            // Change la legende
+            this.labelPlayer.Text = this.players[rnd.Next(this.players.Length)].ToUpper();
+
+            // Replace le pannel down
+            this.panelDown.Location = new Point(
+                this.Size.Width / 2 - this.panelDown.Size.Width / 2,
+                this.Height / 4 * 3
+                );
+
+            // Affiche le pannel down
+            this.panelDown.Show();
+            this.timerDown.Start();
         }
 
         private void victory()
         {
             // Victory !!!
-            this.pictureBoxVictory.Visible = true;
-            this.pictureBoxVictory.Refresh();
-            playSync(Resources.victory);
-            Application.Exit();
+            this.isVictory = true;
+            this.panelVictoryTop.Show();
+            this.pictureBoxVictory.Show();
+            this.panelVictoryBot.Show();
+            play(Resources.victory);
         }
         // --------------------------------------------------------
 
@@ -279,6 +378,34 @@ namespace Wingman
 
 
         // --------------------------------------------------------
+        private bool proba()
+        {
+            return this.rnd.Next(5) == this.rnd.Next(5);
+        }
+
+        private void parent(Control elem, Control parent, int x, int y)
+        {
+            // Place sur parent
+            elem.Parent = parent;
+            elem.Location = new Point(x, y);
+        }
+
+        private string completestr(string str, int max)
+        {
+            while (true)
+            {
+                if (str.Length < max) str += " ";
+                else break;
+                if (str.Length < max) str = " " + str;
+                else break;
+            }
+            return str;
+        }
+        // --------------------------------------------------------
+
+
+
+        // --------------------------------------------------------
         private void timerEmpty_Tick(object sender, EventArgs e)
         {
             // Passe de rouge à blanc
@@ -288,7 +415,6 @@ namespace Wingman
                 for (int i = 255; i > 0; i--)
                 {
                     this.labelAmmo.ForeColor = Color.FromArgb(255, i, i);
-                    this.labelAmmo.Refresh();
                 }
             }
             else
@@ -296,9 +422,22 @@ namespace Wingman
                 for (int i = 0; i < 255; i++)
                 {
                     this.labelAmmo.ForeColor = Color.FromArgb(255, i, i);
-                    this.labelAmmo.Refresh();
                 }
             }
+        }
+
+        private void timerDown_Tick(object sender, EventArgs e)
+        {
+            // Cache au bout de 1 seconde
+            this.panelDown.Hide();
+            this.timerDown.Stop();
+        }
+
+        private void timerFlash_Tick(object sender, EventArgs e)
+        {
+            // Cache au bout de 50 ms
+            this.pictureBoxFlash.Hide();
+            this.timerFlash.Stop();
         }
         // --------------------------------------------------------
     }

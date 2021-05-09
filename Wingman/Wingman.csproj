@@ -116,6 +116,9 @@
   <ItemGroup>
     <Content Include="Badge_You%2527re_Tiering_Me_Apart_Apex_Predator_RS2.ico" />
     <Content Include="predator.ico" />
+    <None Include="Resources\olympus.jpg" />
+    <None Include="Resources\kingskanyon.jpg" />
+    <None Include="Resources\wordlsedge.jpg" />
     <None Include="Resources\squad.wav" />
     <None Include="Resources\down.wav" />
     <None Include="Resources\victory.wav" />

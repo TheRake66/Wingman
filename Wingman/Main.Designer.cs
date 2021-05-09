@@ -56,6 +56,12 @@
             this.labelSquadLeft = new System.Windows.Forms.Label();
             this.labelPlayerLeft = new System.Windows.Forms.Label();
             this.pictureBoxVictory = new System.Windows.Forms.PictureBox();
+            this.timerDown = new System.Windows.Forms.Timer(this.components);
+            this.timerFlash = new System.Windows.Forms.Timer(this.components);
+            this.checkBoxBigmag = new System.Windows.Forms.CheckBox();
+            this.panelVictoryTop = new System.Windows.Forms.Panel();
+            this.panelVictoryBot = new System.Windows.Forms.Panel();
+            this.comboBoxWallpaper = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharm)).BeginInit();
@@ -105,13 +111,14 @@
             this.pictureBoxCharm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCharm.TabIndex = 2;
             this.pictureBoxCharm.TabStop = false;
+            this.pictureBoxCharm.Visible = false;
             // 
             // pictureBoxAmmo
             // 
             this.pictureBoxAmmo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBoxAmmo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxAmmo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAmmo.Image")));
-            this.pictureBoxAmmo.Location = new System.Drawing.Point(30, 470);
+            this.pictureBoxAmmo.Location = new System.Drawing.Point(30, 460);
             this.pictureBoxAmmo.Name = "pictureBoxAmmo";
             this.pictureBoxAmmo.Size = new System.Drawing.Size(70, 68);
             this.pictureBoxAmmo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -123,35 +130,31 @@
             // 
             this.checkBoxCharm.AutoSize = true;
             this.checkBoxCharm.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxCharm.Checked = true;
-            this.checkBoxCharm.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCharm.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxCharm.ForeColor = System.Drawing.Color.White;
-            this.checkBoxCharm.Location = new System.Drawing.Point(30, 30);
+            this.checkBoxCharm.Location = new System.Drawing.Point(25, 25);
             this.checkBoxCharm.Name = "checkBoxCharm";
             this.checkBoxCharm.Size = new System.Drawing.Size(185, 27);
             this.checkBoxCharm.TabIndex = 5;
             this.checkBoxCharm.Text = "Diamond charm";
             this.checkBoxCharm.UseVisualStyleBackColor = false;
             this.checkBoxCharm.CheckedChanged += new System.EventHandler(this.checkBoxCharm_CheckedChanged);
-            this.checkBoxCharm.MouseHover += new System.EventHandler(this.checkBox_MouseHover);
+            this.checkBoxCharm.MouseHover += new System.EventHandler(this.control_MouseHover);
             // 
             // checkBoxReload
             // 
             this.checkBoxReload.AutoSize = true;
             this.checkBoxReload.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxReload.Checked = true;
-            this.checkBoxReload.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxReload.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxReload.ForeColor = System.Drawing.Color.White;
-            this.checkBoxReload.Location = new System.Drawing.Point(30, 60);
+            this.checkBoxReload.Location = new System.Drawing.Point(25, 55);
             this.checkBoxReload.Name = "checkBoxReload";
             this.checkBoxReload.Size = new System.Drawing.Size(161, 27);
             this.checkBoxReload.TabIndex = 6;
             this.checkBoxReload.Text = "Auto reload";
             this.checkBoxReload.UseVisualStyleBackColor = false;
-            this.checkBoxReload.CheckedChanged += new System.EventHandler(this.checkBoxReload_CheckedChanged);
-            this.checkBoxReload.MouseHover += new System.EventHandler(this.checkBox_MouseHover);
+            this.checkBoxReload.CheckedChanged += new System.EventHandler(this.controlClick_CheckedChanged);
+            this.checkBoxReload.MouseHover += new System.EventHandler(this.control_MouseHover);
             // 
             // labelAmmo
             // 
@@ -160,7 +163,7 @@
             this.labelAmmo.BackColor = System.Drawing.Color.Transparent;
             this.labelAmmo.Font = new System.Drawing.Font("Unispace", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAmmo.ForeColor = System.Drawing.Color.White;
-            this.labelAmmo.Location = new System.Drawing.Point(105, 475);
+            this.labelAmmo.Location = new System.Drawing.Point(105, 465);
             this.labelAmmo.Name = "labelAmmo";
             this.labelAmmo.Size = new System.Drawing.Size(54, 58);
             this.labelAmmo.TabIndex = 8;
@@ -193,7 +196,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 570);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 560);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,7 +210,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 590);
+            this.label1.Location = new System.Drawing.Point(110, 580);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 23);
             this.label1.TabIndex = 12;
@@ -220,7 +223,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(265, 590);
+            this.label2.Location = new System.Drawing.Point(265, 580);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 23);
             this.label2.TabIndex = 14;
@@ -231,7 +234,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(185, 570);
+            this.pictureBox2.Location = new System.Drawing.Point(185, 560);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -258,7 +261,6 @@
             // labelKill
             // 
             this.labelKill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelKill.AutoSize = true;
             this.labelKill.BackColor = System.Drawing.Color.Transparent;
             this.labelKill.Font = new System.Drawing.Font("Unispace", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKill.ForeColor = System.Drawing.Color.White;
@@ -266,7 +268,8 @@
             this.labelKill.Name = "labelKill";
             this.labelKill.Size = new System.Drawing.Size(28, 29);
             this.labelKill.TabIndex = 16;
-            this.labelKill.Text = "0";
+            this.labelKill.Text = "000";
+            this.labelKill.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelDown
             // 
@@ -387,22 +390,101 @@
             this.pictureBoxVictory.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxVictory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxVictory.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxVictory.Image")));
-            this.pictureBoxVictory.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxVictory.Location = new System.Drawing.Point(0, 65);
             this.pictureBoxVictory.Name = "pictureBoxVictory";
-            this.pictureBoxVictory.Size = new System.Drawing.Size(1189, 661);
+            this.pictureBoxVictory.Size = new System.Drawing.Size(1189, 596);
             this.pictureBoxVictory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxVictory.TabIndex = 22;
             this.pictureBoxVictory.TabStop = false;
             this.pictureBoxVictory.Visible = false;
+            // 
+            // timerDown
+            // 
+            this.timerDown.Interval = 1000;
+            this.timerDown.Tick += new System.EventHandler(this.timerDown_Tick);
+            // 
+            // timerFlash
+            // 
+            this.timerFlash.Interval = 50;
+            this.timerFlash.Tick += new System.EventHandler(this.timerFlash_Tick);
+            // 
+            // checkBoxBigmag
+            // 
+            this.checkBoxBigmag.AutoSize = true;
+            this.checkBoxBigmag.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxBigmag.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxBigmag.ForeColor = System.Drawing.Color.White;
+            this.checkBoxBigmag.Location = new System.Drawing.Point(25, 85);
+            this.checkBoxBigmag.Name = "checkBoxBigmag";
+            this.checkBoxBigmag.Size = new System.Drawing.Size(173, 27);
+            this.checkBoxBigmag.TabIndex = 23;
+            this.checkBoxBigmag.Text = "Big magazine";
+            this.checkBoxBigmag.UseVisualStyleBackColor = false;
+            this.checkBoxBigmag.CheckedChanged += new System.EventHandler(this.checkBoxBigmag_CheckedChanged);
+            this.checkBoxBigmag.MouseHover += new System.EventHandler(this.control_MouseHover);
+            // 
+            // panelVictoryTop
+            // 
+            this.panelVictoryTop.BackColor = System.Drawing.Color.Black;
+            this.panelVictoryTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelVictoryTop.Location = new System.Drawing.Point(0, 0);
+            this.panelVictoryTop.Name = "panelVictoryTop";
+            this.panelVictoryTop.Size = new System.Drawing.Size(1189, 65);
+            this.panelVictoryTop.TabIndex = 24;
+            this.panelVictoryTop.Visible = false;
+            // 
+            // panelVictoryBot
+            // 
+            this.panelVictoryBot.BackColor = System.Drawing.Color.Black;
+            this.panelVictoryBot.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelVictoryBot.Location = new System.Drawing.Point(0, 596);
+            this.panelVictoryBot.Name = "panelVictoryBot";
+            this.panelVictoryBot.Size = new System.Drawing.Size(1189, 65);
+            this.panelVictoryBot.TabIndex = 27;
+            this.panelVictoryBot.Visible = false;
+            // 
+            // comboBoxWallpaper
+            // 
+            this.comboBoxWallpaper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.comboBoxWallpaper.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWallpaper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxWallpaper.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxWallpaper.ForeColor = System.Drawing.Color.White;
+            this.comboBoxWallpaper.FormattingEnabled = true;
+            this.comboBoxWallpaper.Items.AddRange(new object[] {
+            "Only color",
+            "Kings canyon",
+            "Olympus",
+            "World\'s Edge"});
+            this.comboBoxWallpaper.Location = new System.Drawing.Point(30, 118);
+            this.comboBoxWallpaper.Name = "comboBoxWallpaper";
+            this.comboBoxWallpaper.Size = new System.Drawing.Size(175, 31);
+            this.comboBoxWallpaper.TabIndex = 24;
+            this.comboBoxWallpaper.SelectedIndexChanged += new System.EventHandler(this.comboBoxWallpaper_SelectedIndexChanged);
+            this.comboBoxWallpaper.Click += new System.EventHandler(this.controlClick_CheckedChanged);
+            this.comboBoxWallpaper.MouseHover += new System.EventHandler(this.control_MouseHover);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(49)))), ((int)(((byte)(56)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1189, 661);
+            this.Controls.Add(this.panelVictoryBot);
             this.Controls.Add(this.pictureBoxVictory);
+            this.Controls.Add(this.panelVictoryTop);
+            this.Controls.Add(this.pictureBoxAmmo);
+            this.Controls.Add(this.labelAmmo);
+            this.Controls.Add(this.comboBoxWallpaper);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.checkBoxCharm);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.checkBoxBigmag);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.checkBoxReload);
             this.Controls.Add(this.labelPlayerLeft);
             this.Controls.Add(this.labelSquadLeft);
             this.Controls.Add(this.labelCraft);
@@ -410,24 +492,18 @@
             this.Controls.Add(this.panelDown);
             this.Controls.Add(this.labelKill);
             this.Controls.Add(this.pictureBoxKill);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxReload);
             this.Controls.Add(this.pictureBoxShot);
-            this.Controls.Add(this.labelAmmo);
-            this.Controls.Add(this.checkBoxReload);
-            this.Controls.Add(this.checkBoxCharm);
-            this.Controls.Add(this.pictureBoxAmmo);
             this.Controls.Add(this.pictureBoxCharm);
             this.Controls.Add(this.pictureBoxGun);
             this.Controls.Add(this.pictureBoxFlash);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1205, 700);
             this.Name = "Main";
             this.Text = "Apex Legends Wingman simulator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharm)).EndInit();
@@ -473,6 +549,12 @@
         private System.Windows.Forms.Label labelSquadLeft;
         private System.Windows.Forms.Label labelPlayerLeft;
         private System.Windows.Forms.PictureBox pictureBoxVictory;
+        private System.Windows.Forms.Timer timerDown;
+        private System.Windows.Forms.Timer timerFlash;
+        private System.Windows.Forms.CheckBox checkBoxBigmag;
+        private System.Windows.Forms.Panel panelVictoryTop;
+        private System.Windows.Forms.Panel panelVictoryBot;
+        private System.Windows.Forms.ComboBox comboBoxWallpaper;
     }
 }
 
