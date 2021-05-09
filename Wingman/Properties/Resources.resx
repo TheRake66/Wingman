@@ -121,8 +121,17 @@
   <data name="click" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\click.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\empty.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="here" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\here.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hover.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

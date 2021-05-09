@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Wingman")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Apex Legends Wingman simulator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Wingman")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Fait par Thibault BUSTOS (alias TheRake6666)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

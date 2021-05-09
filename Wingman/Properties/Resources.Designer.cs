@@ -70,11 +70,39 @@ namespace Wingman.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        internal static byte[] cursor {
+            get {
+                object obj = ResourceManager.GetObject("cursor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream down {
+            get {
+                return ResourceManager.GetStream("down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream empty {
             get {
                 return ResourceManager.GetStream("empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream here {
+            get {
+                return ResourceManager.GetStream("here", resourceCulture);
             }
         }
         

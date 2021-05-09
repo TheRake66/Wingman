@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Badge_You%2527re_Tiering_Me_Apart_Apex_Predator_RS2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,16 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,10 +102,22 @@
     <None Include="Resources\empty.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hover.wav" />
+    <None Include="Resources\last.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\last.wav" />
+    <None Include="Resources\music.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Badge_You%2527re_Tiering_Me_Apart_Apex_Predator_RS2.ico" />
+    <None Include="Resources\here.wav" />
+    <None Include="Resources\down.wav" />
+    <None Include="Resources\hover.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
