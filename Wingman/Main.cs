@@ -31,7 +31,7 @@ namespace Wingman
             "Lifeline",
             "Horizon",
             "Wattson",
-            "Bloudhound",
+            "Bloodhound",
             "Valkyrie",
             "Octane",
             "Gibraltar",
@@ -85,7 +85,7 @@ namespace Wingman
 
 
             // Random craft
-            this.labelCraft.Text = this.rnd.Next(99).ToString();
+            this.labelCraft.Text = this.rnd.Next(1, 99).ToString();
         }
         // --------------------------------------------------------
 
@@ -216,7 +216,6 @@ namespace Wingman
 
                 // Victoire ou pas
                 this.currentPlayer--;
-                if (this.currentPlayer == 3) victory();
 
                 if (this.currentPlayer % 3 == 0)
                 {
@@ -246,6 +245,8 @@ namespace Wingman
                 Thread.Sleep(1000);
                 this.panelDown.Hide();
                 this.panelDown.Refresh();
+
+                if (this.currentSquad == 1) victory();
             }
         }
 
