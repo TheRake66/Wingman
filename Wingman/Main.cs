@@ -21,7 +21,7 @@ namespace Wingman
         private int currentKill = 0;
         private int currentDamage = 0;
         private int currentPlayer = 60;
-        private int currentSquad = 10;
+        private int currentSquad = 20;
 
         private bool emprtyToRed = false;
         private Random rnd = new Random();

@@ -367,7 +367,7 @@
             this.labelSquadLeft.Name = "labelSquadLeft";
             this.labelSquadLeft.Size = new System.Drawing.Size(43, 29);
             this.labelSquadLeft.TabIndex = 20;
-            this.labelSquadLeft.Text = "10";
+            this.labelSquadLeft.Text = "20";
             // 
             // labelPlayerLeft
             // 
