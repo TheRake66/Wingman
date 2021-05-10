@@ -59,10 +59,10 @@ namespace Wingman
             InitializeComponent();
 
             // Affiche la version
-            this.Text += " [4.0.0.0]";
+            this.Text += " [5.1.0.0]";
 
             // Choisi le fond ecran
-            this.comboBoxWallpaper.SelectedIndex = 1;
+            this.comboBoxWallpaper.SelectedIndex = this.rnd.Next(1, this.comboBoxWallpaper.Items.Count);
 
             // Met en transparent
             parent(this.pictureBoxCharm, this.pictureBoxGun, 575, 25);

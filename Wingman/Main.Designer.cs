@@ -262,6 +262,7 @@
             // labelKill
             // 
             this.labelKill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelKill.AutoSize = true;
             this.labelKill.BackColor = System.Drawing.Color.Transparent;
             this.labelKill.Font = new System.Drawing.Font("Unispace", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKill.ForeColor = System.Drawing.Color.White;
@@ -269,8 +270,7 @@
             this.labelKill.Name = "labelKill";
             this.labelKill.Size = new System.Drawing.Size(28, 29);
             this.labelKill.TabIndex = 16;
-            this.labelKill.Text = "000";
-            this.labelKill.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelKill.Text = "0";
             // 
             // panelDown
             // 
@@ -489,8 +489,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1189, 661);
             this.Controls.Add(this.pictureBoxVictory);
-            this.Controls.Add(this.panelVictoryBot);
             this.Controls.Add(this.panelVictoryTop);
+            this.Controls.Add(this.panelVictoryBot);
             this.Controls.Add(this.checkBoxFullscreen);
             this.Controls.Add(this.pictureBoxAmmo);
             this.Controls.Add(this.labelAmmo);
