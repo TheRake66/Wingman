@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>predator.ico</ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="End.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="End.Designer.cs">
+      <DependentUpon>End.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +69,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="End.resx">
+      <DependentUpon>End.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,13 +133,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Badge_You%2527re_Tiering_Me_Apart_Apex_Predator_RS2.ico" />
+    <Content Include="logo.ico" />
     <Content Include="predator.ico" />
+    <None Include="Resources\victory.wav" />
     <None Include="Resources\olympus.jpg" />
     <None Include="Resources\kingskanyon.jpg" />
     <None Include="Resources\wordlsedge.jpg" />
     <None Include="Resources\squad.wav" />
     <None Include="Resources\down.wav" />
-    <None Include="Resources\victory.wav" />
     <None Include="Resources\here.wav" />
     <None Include="Resources\hover.wav" />
   </ItemGroup>

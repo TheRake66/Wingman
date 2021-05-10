@@ -448,7 +448,7 @@
             // 
             this.comboBoxWallpaper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.comboBoxWallpaper.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxWallpaper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxWallpaper.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxWallpaper.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold);
             this.comboBoxWallpaper.ForeColor = System.Drawing.Color.White;
             this.comboBoxWallpaper.FormattingEnabled = true;
@@ -469,6 +469,8 @@
             // 
             this.checkBoxFullscreen.AutoSize = true;
             this.checkBoxFullscreen.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxFullscreen.Checked = true;
+            this.checkBoxFullscreen.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxFullscreen.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxFullscreen.ForeColor = System.Drawing.Color.White;
             this.checkBoxFullscreen.Location = new System.Drawing.Point(216, 25);
@@ -488,9 +490,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1189, 661);
-            this.Controls.Add(this.pictureBoxVictory);
-            this.Controls.Add(this.panelVictoryTop);
-            this.Controls.Add(this.panelVictoryBot);
             this.Controls.Add(this.checkBoxFullscreen);
             this.Controls.Add(this.pictureBoxAmmo);
             this.Controls.Add(this.labelAmmo);
@@ -514,14 +513,20 @@
             this.Controls.Add(this.pictureBoxCharm);
             this.Controls.Add(this.pictureBoxGun);
             this.Controls.Add(this.pictureBoxFlash);
+            this.Controls.Add(this.pictureBoxVictory);
+            this.Controls.Add(this.panelVictoryTop);
+            this.Controls.Add(this.panelVictoryBot);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1205, 700);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Apex Legends Wingman simulator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
+            this.Shown += new System.EventHandler(this.Main_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFlash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharm)).EndInit();

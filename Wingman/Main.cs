@@ -18,6 +18,7 @@ namespace Wingman
     {
         // --------------------------------------------------------
         private int maxAmmo = 6;
+        private int nbF12 = 0;
         private bool isVictory = false;
 
         private int currentAmmo = 6;
@@ -56,10 +57,12 @@ namespace Wingman
         // --------------------------------------------------------
         public Main()
         {
-            InitializeComponent();
+            // Fenetre de bienvenu
+            Start str = new Start();
+            str.Owner = this;
+            str.ShowDialog();
 
-            // Affiche la version
-            this.Text += " [5.1.0.0]";
+            InitializeComponent();
 
             // Choisi le fond ecran
             this.comboBoxWallpaper.SelectedIndex = this.rnd.Next(1, this.comboBoxWallpaper.Items.Count);
@@ -85,10 +88,26 @@ namespace Wingman
             this.labelCraft.Text = craft.ToString();
         }
 
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            // Plein ecran
+            Rectangle screen = Screen.PrimaryScreen.Bounds;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Size = new Size(screen.Width, screen.Height);
+            this.Location = new Point(0, 0);
+        }
+
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Secret victoire
+            if (e.KeyCode == Keys.F12) this.nbF12++;
+            if (this.nbF12 == 5) victory();
+        }
+
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Message
-            if (MessageBox.Show(
+            if (!this.isVictory && MessageBox.Show(
                     "Leave game ?",
                     "Apex Legends Wingman simulator",
                     MessageBoxButtons.YesNo,
@@ -387,10 +406,22 @@ namespace Wingman
         {
             // Victory !!!
             this.isVictory = true;
+
             this.panelVictoryTop.Show();
-            this.pictureBoxVictory.Show();
             this.panelVictoryBot.Show();
-            play(Resources.victory);
+            this.pictureBoxVictory.Show();
+
+            this.panelVictoryTop.BringToFront();
+            this.panelVictoryBot.BringToFront();
+            this.pictureBoxVictory.BringToFront();
+
+            this.Refresh();
+            playSync(Resources.victory);
+
+            End end = new End(this.currentShot, this.currentDamage);
+            end.Owner = this;
+            end.ShowDialog();
+            this.Close();
         }
         // --------------------------------------------------------
 
@@ -445,20 +476,7 @@ namespace Wingman
         {
             // Passe de rouge à blanc
             this.emprtyToRed = !this.emprtyToRed;
-            if (this.emprtyToRed)
-            {
-                for (int i = 255; i > 0; i--)
-                {
-                    this.labelAmmo.ForeColor = Color.FromArgb(255, i, i);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 255; i++)
-                {
-                    this.labelAmmo.ForeColor = Color.FromArgb(255, i, i);
-                }
-            }
+            this.labelAmmo.ForeColor = this.emprtyToRed ? Color.Red : Color.White;
         }
 
         private void timerDown_Tick(object sender, EventArgs e)
